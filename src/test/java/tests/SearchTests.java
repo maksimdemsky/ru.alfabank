@@ -5,11 +5,11 @@ import steps.BaseSteps;
 
 import static com.codeborne.selenide.Selenide.sleep;
 
-public class SearchTests {
+public class SearchTests extends TestBase {
     public BaseSteps steps = new BaseSteps();
 
     @Test
-    void checkSearchResultTest () {
+    void checkSearchResultTest() {
         steps.openMainPage();
         steps.clickOnSearch();
         steps.insertTextOnSearchAndPressEnter();

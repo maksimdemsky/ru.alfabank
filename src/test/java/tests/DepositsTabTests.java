@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import steps.BaseSteps;
 
-public class DepositsTabTests {
+public class DepositsTabTests extends TestBase {
     public BaseSteps steps = new BaseSteps();
 
     @Test
