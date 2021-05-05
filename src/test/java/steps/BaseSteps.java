@@ -16,7 +16,6 @@ public class BaseSteps {
     @Step("Открываем главную страницу Альфа-Банка")
     public void openMainPage() {
         open(base_url);
-        refresh();
     }
 
     @Step("Клик на поле поиска")
