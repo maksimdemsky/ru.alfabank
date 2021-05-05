@@ -1,10 +1,11 @@
 package steps;
 
 import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.CollectionCondition.size;
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.CollectionCondition.*;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
@@ -32,5 +33,21 @@ public class BaseSteps {
     @Step("Проверяем что в результатах поиска более 1 или более ответов")
     public void checkResult() {
         $$(".b-serp-item").shouldHave(size(5));
+    }
+
+    @Step("Клик на Вклады")
+    public void depositTitleClick() {
+        $("[title=Вклады]").click();
+    }
+
+    @Step("Клик на Вклады")
+    public void depositButtonClick() {
+        $$("[type=button]").findBy(text("Депозиты")).click();
+    }
+
+    @Step("Проверка что доступных вкладов больше 1")
+    public void checkEqualDepositAndText() {
+        $$("#alfa-deposit").shouldHave(sizeGreaterThanOrEqual(1));
+        $$("[data-widget-name=Heading]").get(0).shouldHave(text("Вклады"));
     }
 }
