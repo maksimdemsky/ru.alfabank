@@ -18,7 +18,6 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
-        Configuration.fastSetValue = true;
         addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);

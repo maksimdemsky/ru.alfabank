@@ -1,5 +1,6 @@
 package tests;
 
+import jdk.jfr.Name;
 import org.junit.jupiter.api.Test;
 import steps.BaseSteps;
 
@@ -9,6 +10,7 @@ public class SearchTests extends TestBase {
     public BaseSteps steps = new BaseSteps();
 
     @Test
+    @Name("Проверка формы поиска")
     void checkSearchResultTest() {
         steps.openMainPage();
         steps.clickOnSearch();
